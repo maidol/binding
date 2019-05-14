@@ -98,14 +98,14 @@ func defaultURLBinder(req *http.Request, userStruct FieldMapper) Errors {
 
 // Header reads data out of the header into a struct you provide.
 // This function invokes data validation after deserialization.
-//func Header(req *http.Request, userStruct FieldMapper) error {
-//	err := headerBinder(req, userStruct)
-//	if len(err) > 0 {
-//		return err
-//	}
-//	return nil
+func Header(req *http.Request, userStruct FieldMapper) error {
+	err := headerBinder(req, userStruct)
+	if len(err) > 0 {
+		return err
+	}
+	return nil
 
-//}
+}
 
 var headerBinder requestBinder = defaultHeaderBinder
 
